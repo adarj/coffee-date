@@ -1,0 +1,19 @@
+{
+  "name": "coffee-date",
+  "version": "0.1.0",
+  "description": "A Slack bot that pairs users for virtual coffee dates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adarj/coffee-date.git"
+  },
+  "author": "Akil Darjean",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adarj/coffee-date/issues"
+  },
+  "homepage": "https://github.com/adarj/coffee-date#readme"
+}
