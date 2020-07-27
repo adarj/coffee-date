@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/adarj/coffee-date/issues"
   },
-  "homepage": "https://github.com/adarj/coffee-date#readme"
+  "homepage": "https://github.com/adarj/coffee-date#readme",
+  "dependencies": {
+    "slackbots": "^1.2.0"
+  }
 }
