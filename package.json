@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/adarj/coffee-date#readme",
   "dependencies": {
-    "slackbots": "^1.2.0"
+    "@slack/events-api": "^2.3.3",
+    "@slack/web-api": "^5.11.0",
+    "jest": "^26.2.1"
   }
 }
