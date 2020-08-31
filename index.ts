@@ -2,6 +2,10 @@ const { WebClient } = require('@slack/web-api');
 
 const web = new WebClient(process.env.SLACK_TOKEN);
 
+function getCoffeeDates(users: Array<string>): Array<object> {
+    return [{users: users}];
+}
+
 (async () => {
     try {
         await web.chat.postMessage({
@@ -16,3 +20,5 @@ const web = new WebClient(process.env.SLACK_TOKEN);
 
     console.log('Message posted!');
 })();
+
+module.exports = getCoffeeDates;
