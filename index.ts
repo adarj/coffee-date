@@ -17,7 +17,10 @@ function splitUsersIntoPairs(users: string[]): Array<string[]> {
 }
 
 function getCoffeeDates(users: string[]): CoffeeDate[] {
-    return [{users: users}];
+    const pairs = splitUsersIntoPairs(users);
+    return pairs.map(pair => {
+        return {users: pair}
+    });
 }
 
 (async () => {
