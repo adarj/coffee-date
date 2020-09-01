@@ -1,9 +1,19 @@
 const { WebClient } = require('@slack/web-api');
+const shuffle = require('shuffle-array');
 
 const web = new WebClient(process.env.SLACK_TOKEN);
 
 interface CoffeeDate {
     users: string[];
+}
+
+function splitUsersIntoPairs(users: string[]): Array<string[]> {
+    shuffle(users);
+    const numOfPairs = Math.ceil(users.length / 2);
+
+    return [...Array(numOfPairs)].map((value, index) => {
+        return users.slice(index * 2, (index + 1) * 2);
+    });
 }
 
 function getCoffeeDates(users: string[]): CoffeeDate[] {
@@ -25,4 +35,4 @@ function getCoffeeDates(users: string[]): CoffeeDate[] {
     console.log('Message posted!');
 })();
 
-module.exports = getCoffeeDates;
+module.exports = { getCoffeeDates, splitUsersIntoPairs };

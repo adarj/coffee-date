@@ -19,7 +19,8 @@
   "dependencies": {
     "@slack/events-api": "^2.3.3",
     "@slack/web-api": "^5.11.0",
-    "@types/jest": "^26.0.12"
+    "@types/jest": "^26.0.12",
+    "shuffle-array": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.5",
