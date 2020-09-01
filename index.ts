@@ -2,7 +2,11 @@ const { WebClient } = require('@slack/web-api');
 
 const web = new WebClient(process.env.SLACK_TOKEN);
 
-function getCoffeeDates(users: Array<string>): Array<object> {
+interface CoffeeDate {
+    users: string[];
+}
+
+function getCoffeeDates(users: string[]): CoffeeDate[] {
     return [{users: users}];
 }
 
