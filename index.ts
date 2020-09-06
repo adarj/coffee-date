@@ -31,19 +31,23 @@ function getCoffeeDates(users: string[]): CoffeeDate[] {
     });
 }
 
-(async () => {
-    try {
-        await web.chat.postMessage({
-            channel: '#coffee-dates',
-            text: 'I have attained sentience.',
-            icon_emoji: ':coffee:',
-            username: 'Coffee Date',
-        });
-    } catch (error) {
-        console.log(error);
-    }
+function postMessage(channel: string, text: string): void {
+    (async () => {
+        try {
+            await web.chat.postMessage({
+                channel: channel,
+                text: text,
+                icon_emoji: ':coffee:',
+                username: 'Coffee Date',
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    
+        console.log('Message posted!');
+    })();
+}
 
-    console.log('Message posted!');
-})();
+postMessage('#coffee-dates', 'I have attained sentience.');
 
 module.exports = { getCoffeeDates, splitUsersIntoPairs };
