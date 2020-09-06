@@ -16,3 +16,12 @@ test('splitUsersIntoPairs() - splits array into an array of randomized pairs of 
     expect(pairs[1].length).toBe(2);
     expect(pairs[2].length).toBe(2);
 });
+
+test('splitUsersIntoPairs() - array with odd number of elements creates a group with three members', () => {
+    const pairs = splitUsersIntoPairs(['1', '2', '3', '4', '5', '6', '7']);
+
+    expect(pairs.length).toBe(3);
+    expect(pairs[0].length).toBe(2);
+    expect(pairs[1].length).toBe(2);
+    expect(pairs[2].length).toBe(3);
+});
