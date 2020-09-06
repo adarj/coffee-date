@@ -43,7 +43,7 @@ function postMessage(channel: string, text: string): void {
         } catch (error) {
             console.log(error);
         }
-    
+
         console.log('Message posted!');
     })();
 }
