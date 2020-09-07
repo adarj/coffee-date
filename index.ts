@@ -48,6 +48,4 @@ function postMessage(channel: string, text: string): void {
     })();
 }
 
-postMessage('#coffee-dates', 'I have attained sentience.');
-
 module.exports = { getCoffeeDates, splitUsersIntoPairs };
