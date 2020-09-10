@@ -54,6 +54,9 @@ function postMessage(channel: string, text: string): void {
     })();
 }
 
+slackEvents.on('error', (error: any) => {
+    console.log(error);
+});
 
 (async () => {
     const server = await slackEvents.start(port);
