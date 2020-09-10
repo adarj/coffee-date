@@ -3,7 +3,9 @@ const { createEventAdapter } = require('@slack/events-api');
 const shuffle = require('shuffle-array');
 
 const web = new WebClient(process.env.SLACK_TOKEN);
-const slackEvents = createEventAdapter(process.env.SLACK_SIGNING_SECRET);
+
+const slackSigningSecret = process.env.SLACK_SIGNING_SECRET;
+const slackEvents = createEventAdapter(slackSigningSecret);
 
 interface CoffeeDate {
     users: string[];
