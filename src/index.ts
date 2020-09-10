@@ -50,7 +50,7 @@ function postMessage(channel: string, text: string): void {
     })();
 }
 
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 
 (async () => {
     const server = await slackEvents.start(port);
