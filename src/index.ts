@@ -15,7 +15,7 @@ function splitUsersIntoPairs(users: string[]): Array<string[]> {
         return users.slice(index * 2, (index + 1) * 2);
     });
 
-    if (pairs.slice(-1).pop().length == 1) {
+    if (pairs.slice(-1).pop()?.length == 1) {
         pairs[pairs.length - 2] = [...pairs[pairs.length - 2], ...pairs[pairs.length - 1]];
         pairs.pop();
     }
