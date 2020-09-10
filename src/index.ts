@@ -7,6 +7,8 @@ const web = new WebClient(process.env.SLACK_TOKEN);
 const slackSigningSecret = process.env.SLACK_SIGNING_SECRET;
 const slackEvents = createEventAdapter(slackSigningSecret);
 
+const port = process.env.PORT || 3000;
+
 interface CoffeeDate {
     users: string[];
 }
@@ -52,7 +54,6 @@ function postMessage(channel: string, text: string): void {
     })();
 }
 
-const port = process.env.PORT || 3000;
 
 (async () => {
     const server = await slackEvents.start(port);
