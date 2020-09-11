@@ -54,14 +54,10 @@ function postMessage(channel: string, text: string): void {
     })();
 }
 
-slackEvents.on('error', (error: any) => {
-    console.log(error);
+slackEvents.on('error', console.error);
+
+slackEvents.start(port).then(() => {
+    console.log(`Listening for events on ${port}`);
 });
-
-(async () => {
-    const server = await slackEvents.start(port);
-
-    console.log(`Listening for events on ${server.address().port}`);
-})();
 
 module.exports = { getCoffeeDates, splitUsersIntoPairs };
