@@ -1,13 +1,10 @@
-const { WebClient } = require('@slack/web-api');
-const { createEventAdapter } = require('@slack/events-api');
+const { App } = require('@slack/bolt');
 const shuffle = require('shuffle-array');
 
-const web = new WebClient(process.env.SLACK_TOKEN);
-
-const slackSigningSecret = process.env.SLACK_SIGNING_SECRET;
-const slackEvents = createEventAdapter(slackSigningSecret);
-
-const port = process.env.PORT || 3000;
+const app = new App({
+    signingSecret: process.env.SLACK_SIGNING_SECRET,
+    token: process.env.SLACK_TOKEN,
+});
 
 interface CoffeeDate {
     users: string[];
@@ -37,27 +34,9 @@ function getCoffeeDates(users: string[]): CoffeeDate[] {
     });
 }
 
-function postMessage(channel: string, text: string): void {
-    (async () => {
-        try {
-            await web.chat.postMessage({
-                channel: channel,
-                text: text,
-                icon_emoji: ':coffee:',
-                username: 'Coffee Date',
-            });
-        } catch (error) {
-            console.log(error);
-        }
-
-        console.log('Message posted!');
-    })();
-}
-
-slackEvents.on('error', console.error);
-
-slackEvents.start(port).then(() => {
-    console.log(`Listening for events on ${port}`);
-});
+(async () => {
+    await app.start(process.env.PORT || 3000);
+    console.log('⚡️ Bolt app is running!');
+})();
 
 module.exports = { getCoffeeDates, splitUsersIntoPairs };
