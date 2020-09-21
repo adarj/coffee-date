@@ -8,7 +8,7 @@ const app = new App({
 // The hello command simply responds with "Hello, {user}!"
 app.command('/hello', async ({ command, ack, say }: any) => {
     await ack();
-    await say(`Hello, ${command.user}!`);
+    await say(`Hello, @${command.user_id}!`);
 });
 
 (async () => {
