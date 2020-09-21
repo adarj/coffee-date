@@ -23,7 +23,7 @@ describe('splitUsersIntoPairs()', () => {
 describe('getCoffeeDates()', () => {
     it('returns an array of coffee date pairs when an array of user IDs is inputted', () => {
         const dates = getCoffeeDates(['U023BECGF', 'U061F7AUR', 'U023EJJWO', 'U061A3ZUR']);
-    
+
         expect(dates.length).toBe(2);
         expect(dates[0].users.length).toBe(2);
         expect(dates[1].users.length).toBe(2);
