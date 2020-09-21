@@ -1,6 +1,7 @@
 const { App } = require('@slack/bolt');
 const shuffle = require('shuffle-array');
 
+export{};
 const app = new App({
     signingSecret: process.env.SLACK_SIGNING_SECRET,
     token: process.env.SLACK_TOKEN,
@@ -34,9 +35,4 @@ function getCoffeeDates(users: string[]): CoffeeDate[] {
     });
 }
 
-(async () => {
-    await app.start(process.env.PORT || 3000);
-    console.log('⚡️ Bolt app is running!');
-})();
-
-module.exports = { getCoffeeDates, splitUsersIntoPairs };
+module.exports = { app, getCoffeeDates, splitUsersIntoPairs };

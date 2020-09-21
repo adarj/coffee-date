@@ -9,7 +9,7 @@
   "scripts": {
     "test": "jest",
     "build": "tsc",
-    "start": "node src/index.js"
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
