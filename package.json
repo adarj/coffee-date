@@ -2,7 +2,7 @@
   "name": "coffee-date",
   "version": "0.1.0",
   "description": "A Slack bot that pairs users for virtual coffee dates",
-  "main": "src/index.js",
+  "main": "src/server.js",
   "engines": {
     "node": "12.x"
   },

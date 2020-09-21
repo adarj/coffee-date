@@ -1,4 +1,4 @@
-const { getCoffeeDates, splitUsersIntoPairs } = require('./index');
+const { getCoffeeDates, splitUsersIntoPairs } = require('./app');
 
 describe('splitUsersIntoPairs()', () => {
     it('splits array into an array of randomized pairs of two elements', () => {
