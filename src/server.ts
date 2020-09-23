@@ -11,6 +11,16 @@ app.command('/hello', async ({ command, ack, say }: any) => {
     await say(`Hello, <@${command.user_id}>!`);
 });
 
+app.command('/coffee_date', async({ command, ack, say }: any) => {
+    await ack();
+    if (command.text == 'match') {
+        const members = await app.client.conversations.members({
+            channel: command.channel_id
+        });
+        console.log(members);
+    }
+});
+
 (async () => {
     await app.start(process.env.PORT || 3000);
     console.log('⚡️ Bolt app is running!');
