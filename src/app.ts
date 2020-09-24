@@ -13,6 +13,7 @@ function splitUsersIntoPairs(users: string[]): Array<string[]> {
         return users.slice(index * 2, (index + 1) * 2);
     });
 
+    // If there's a an odd number of users, create a date with three users
     if (pairs.slice(-1).pop()?.length == 1) {
         pairs[pairs.length - 2] = [...pairs[pairs.length - 2], ...pairs[pairs.length - 1]];
         pairs.pop();
