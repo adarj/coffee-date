@@ -15,6 +15,7 @@ app.command('/coffee_date', async({ command, ack, say }: any) => {
     await ack();
     if (command.text == 'match') {
         const members = await app.client.conversations.members({
+            token: process.env.SLACK_TOKEN,
             channel: command.channel_id
         });
         console.log(members);
