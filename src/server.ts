@@ -21,7 +21,17 @@ app.command('/coffee_date', async({ command, ack, say }: any) => {
             limit: 200
         });
         const dates = getCoffeeDates(response.members);
-        console.log(dates);
+
+        let message = 'Here are the coffee dates for this round:\n'
+            .concat(dates.forEach((date: any): any => {
+                if (date.users.length == 2) {
+                    return `<@${date.users[0]}> and <@${date.users[1]}>`;
+                } else if (date.users.length == 3) {
+                    return `<@${date.users[0]}>, <@${date.users[1]}>, and <@${date.users[2]}>`;
+                }
+            }));
+
+        console.log(message);
     }
 });
 
