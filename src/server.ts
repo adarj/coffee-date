@@ -23,7 +23,7 @@ app.command('/coffee_date', async({ command, ack, say }: any) => {
         const dates = getCoffeeDates(response.members);
 
         let message = 'Here are the coffee dates for this round:\n'
-            .concat(dates.forEach((date: any): any => {
+            .concat(dates.map((date: any): any => {
                 if (date.users.length == 2) {
                     return `<@${date.users[0]}> and <@${date.users[1]}>\n`;
                 } else if (date.users.length == 3) {
