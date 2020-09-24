@@ -1,4 +1,5 @@
 const { App } = require('@slack/bolt');
+const { getCoffeeDates } = require('./app');
 
 const app = new App({
     signingSecret: process.env.SLACK_SIGNING_SECRET,
@@ -19,7 +20,8 @@ app.command('/coffee_date', async({ command, ack, say }: any) => {
             channel: command.channel_id,
             limit: 200
         });
-        console.log(response);
+        const dates = getCoffeeDates(response.members);
+        console.log(dates);
     }
 });
 

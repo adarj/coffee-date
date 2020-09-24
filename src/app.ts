@@ -1,3 +1,4 @@
+export {}
 const shuffle = require('shuffle-array');
 
 interface CoffeeDate {
