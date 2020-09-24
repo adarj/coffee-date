@@ -31,7 +31,7 @@ app.command('/coffee_date', async({ command, ack, say }: any) => {
                 }
             }));
 
-        console.log(message);
+        await say(message);
     }
 });
 
