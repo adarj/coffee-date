@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/adarj/coffee-date#readme",
   "dependencies": {
-    "@slack/bolt": "^2.3.0",
+    "@slack/bolt": "^3.12.2",
     "@types/jest": "^26.0.12",
     "shuffle-array": "^1.0.1"
   },
